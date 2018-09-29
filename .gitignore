@@ -1,0 +1,10 @@
+node_modules/
+.expo/*
+npm-debug.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.zip
+*.rar
+.idea/
+.DS_Store
