@@ -3,77 +3,13 @@ import { Button, Text, View } from 'react-native';
 import { Ionicons } from 'react-native-vector-icons';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
+import HomeScreen from './src/pages/home';
+import GardenScreen from './src/pages/garden';
+import CognizeScreen from './src/pages/cognize';
+import ShopScreen from './src/pages/shop';
+import MineScreen from './src/pages/mine';
+
 const headTitle = ['A', 'B', 'C', 'D', 'E'];
-
-class HomeScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Home!</Text>
-        <Button
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate('Details')}
-        />
-      </View>
-    );
-  }
-}
-
-class FlowerScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Settings!</Text>
-        <Button
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate('Details')}
-        />
-      </View>
-    );
-  }
-}
-
-class AddScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Settings!</Text>
-        <Button
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate('Details')}
-        />
-      </View>
-    );
-  }
-}
-
-class ShopScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Settings!</Text>
-        <Button
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate('Details')}
-        />
-      </View>
-    );
-  }
-}
-
-class MeScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Settings!</Text>
-        <Button
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate('Details')}
-        />
-      </View>
-    );
-  }
-}
 
 class DetailsScreen extends React.Component {
   render() {
@@ -86,35 +22,20 @@ class DetailsScreen extends React.Component {
 }
 
 const TabNavigator = createBottomTabNavigator({
-    TabHome: { 
-      screen: HomeScreen,
-      navigationOptions: {
-        title: headTitle[0],
-      }
+    TabHome: {
+      screen: HomeScreen, navigationOptions: { title: headTitle[0] }
     },
     TabFlower: { 
-      screen: FlowerScreen,
-      navigationOptions: {
-        title: headTitle[1],
-      }
+      screen: GardenScreen, navigationOptions: { title: headTitle[1] }
     },
-    TabAdd: {
-      screen: AddScreen,
-      navigationOptions: {
-        title: headTitle[2],
-      }
+    TabAdd: { 
+      screen: CognizeScreen, navigationOptions: { title: headTitle[2] }
     },
     TabShop: {
-      screen: ShopScreen,
-      navigationOptions: {
-        title: headTitle[3],
-      }
+      screen: ShopScreen, navigationOptions: { title: headTitle[3] }
     },
     TabMe: {
-      screen: MeScreen,
-      navigationOptions: {
-        title: headTitle[4],
-      }
+      screen: MineScreen, navigationOptions: { title: headTitle[4] }
     },
   },{
     navigationOptions: ({ navigation }) => ({
@@ -122,21 +43,11 @@ const TabNavigator = createBottomTabNavigator({
         const { routeName } = navigation.state;
         let iconName;
         switch(routeName) {
-          case 'TabHome':
-            iconName = `ios-home`;
-            break;
-          case 'TabFlower':
-            iconName = `ios-flower`;
-            break;
-          case 'TabAdd':
-            iconName = `ios-add-circle${focused ? '' : '-outline'}`;
-            break;
-          case 'TabShop':
-            iconName = `ios-appstore`;
-            break;
-          case 'TabMe':
-            iconName = `ios-person`;
-            break;
+          case 'TabHome': iconName = `ios-home`; break;
+          case 'TabFlower': iconName = `ios-flower`; break;
+          case 'TabAdd': iconName = `ios-add-circle${focused ? '' : '-outline'}`; break;
+          case 'TabShop': iconName = `ios-appstore`; break;
+          case 'TabMe': iconName = `ios-person`; break;
           default: break;
         }
 
@@ -150,7 +61,7 @@ const TabNavigator = createBottomTabNavigator({
       inactiveTintColor: 'gray',
     },
   }
-);
+)
 
 export default createStackNavigator({
   Home: { 
