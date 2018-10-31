@@ -6,7 +6,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import HomeScreen from './src/pages/home';
 import GardenScreen from './src/pages/garden';
 import CognizeScreen from './src/pages/cognize';
-import ShopScreen from './src/pages/shop';
+import ClubScreen from './src/pages/club';
 import MineScreen from './src/pages/mine';
 
 const headTitle = ['A', 'B', 'C', 'D', 'E'];
@@ -28,14 +28,11 @@ const TabNavigator = createBottomTabNavigator({
     TabFlower: { 
       screen: GardenScreen, navigationOptions: { title: headTitle[1] }
     },
-    TabAdd: { 
-      screen: CognizeScreen, navigationOptions: { title: headTitle[2] }
-    },
-    TabShop: {
-      screen: ShopScreen, navigationOptions: { title: headTitle[3] }
+    TabClub: {
+      screen: ClubScreen, navigationOptions: { title: headTitle[2] }
     },
     TabMe: {
-      screen: MineScreen, navigationOptions: { title: headTitle[4] }
+      screen: MineScreen, navigationOptions: { title: headTitle[3] }
     },
   },{
     navigationOptions: ({ navigation }) => ({
@@ -45,8 +42,8 @@ const TabNavigator = createBottomTabNavigator({
         switch(routeName) {
           case 'TabHome': iconName = `ios-home`; break;
           case 'TabFlower': iconName = `ios-flower`; break;
-          case 'TabAdd': iconName = `ios-add-circle${focused ? '' : '-outline'}`; break;
-          case 'TabShop': iconName = `ios-appstore`; break;
+          //case 'TabAdd': iconName = `ios-add-circle${focused ? '' : '-outline'}`; break;
+          case 'TabClub': iconName = `ios-book`; break;
           case 'TabMe': iconName = `ios-person`; break;
           default: break;
         }
