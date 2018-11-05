@@ -136,10 +136,10 @@ export default class HomeScreen extends React.Component {
           data={[{key: 'a1111111'}, {key: 'b11111'}]}
           renderItem={({item}) => 
             <View style={styles.article}>
-              <Text style={{fontSize:18}}>你需要知道的事</Text>
+              <Text style={{fontSize:18, paddingTop: 8, paddingBottom:12}}>你需要知道的事</Text>
               <Image source={require('../../static/img/1.jpg')} style={styles.articleImg}/>
-              <Text style={{color:'#626364'}}>带你读懂那些事</Text>
-              <Text style={{color:'#626364',fontSize:10}}>9000 阅读 &bull; 571 收藏</Text>
+              <Text style={{color:'#626364', paddingTop: 12}}>带你读懂那些事</Text>
+              <Text style={{color:'#626364',fontSize:10, paddingTop: 8, paddingBottom:10}}>9000 阅读 &bull; 571 收藏</Text>
             </View>
           }
         />
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     width: width*0.9,
-    height: width * 30 / 75,
+    height: width * 26 / 75,
   },
   paginationStyle: {
     //bottom: 6,
@@ -172,12 +172,12 @@ const styles = StyleSheet.create({
     borderRadius: 0,
   },
   bannerImg: {
-    height: width * 30 / 75,
+    height: width * 26 / 75,
     width: width*0.94,
     borderRadius: 3, 
   },
   icons: {
-    paddingTop: 20,
+    paddingTop: 2,
     paddingLeft: bWidth,
     paddingBottom: 20,
     paddingRight: bWidth,
@@ -249,7 +249,6 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
   },
   article: {
-    height:200, 
     backgroundColor:'#fff',
     margin: bWidth,
     marginTop: 0,
@@ -260,8 +259,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   articleImg: {
-    height: 90,
+    height: width * 26 / 75,
     width: width - 4*bWidth,
     resizeMode:'cover',
+    borderRadius: 3, 
   }
 })
